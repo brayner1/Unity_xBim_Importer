@@ -1,0 +1,452 @@
+***** Repair of database 'Assets/ifc/teklateste1_test.xBIM' started [ESENT version 10.00.17134.0000, (ESENT[10.0.17134.0] RETAIL RTM MBCS)]
+
+search for 'ERROR:' to find errors
+search for 'WARNING:' to find warnings
+checking database header
+ERROR: database was not shutdown cleanly (Dirty Shutdown)
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes on disk.
+Creating 16 threads
+checking SystemRoot
+SystemRoot (OE)
+SystemRoot (AE)
+checking system tables
+MSysObjects 
+MSysObjectsShadow 
+MSysObjects Name
+MSysObjects RootObjects
+rebuilding and comparing indexes
+checking logical consistency of system tables
+MSysObjects
+MSysObjectsShadow
+MSysObjids
+Geometry:	11288:	checking table "Geometry" (11)
+Geometry:	11288:	checking data
+Geometry:	11288:	checking index "GeomStyleIndex" (14)
+Geometry:	11288:	checking index "GeomTypeIndex" (13)
+Geometry:	11288:	checking index "GeomHashIndex" (12)
+Geometry:	11288:	rebuilding and comparing indexes
+Geometry:	11288:	integrity-check of table "Geometry" (11) finishes with error 0 (0x0) after 0 seconds
+IfcEntities:	11288:	checking table "IfcEntities" (8)
+IfcEntities:	11288:	checking long value tree (21)
+IfcEntities:	11288:	checking data
+IfcEntities:	11288:	checking LV refcounts
+IfcEntities:	11288:	integrity-check of table "IfcEntities" (8) finishes with error 0 (0x0) after 0 seconds
+IfcEntitiesIndex:	11288:	checking table "IfcEntitiesIndex" (9)
+IfcEntitiesIndex:	11288:	checking data
+IfcEntitiesIndex:	11288:	integrity-check of table "IfcEntitiesIndex" (9) finishes with error 0 (0x0) after 1 seconds
+MetaData:	11288:	checking table "MetaData" (10)
+MetaData:	11288:	checking data
+MetaData:	11288:	integrity-check of table "MetaData" (10) finishes with error 0 (0x0) after 0 seconds
+MSysLocales:	11288:	checking table "MSysLocales" (7)
+MSysLocales:	11288:	checking data
+MSysLocales:	11288:	integrity-check of table "MSysLocales" (7) finishes with error 0 (0x0) after 0 seconds
+MSysObjids:	11288:	checking table "MSysObjids" (6)
+MSysObjids:	11288:	checking data
+MSysObjids:	11288:	integrity-check of table "MSysObjids" (6) finishes with error 0 (0x0) after 0 seconds
+ShapeGeometry:	11288:	checking table "ShapeGeometry" (22)
+ShapeGeometry:	11288:	checking long value tree (28)
+ShapeGeometry:	11288:	checking data
+ShapeGeometry:	11288:	checking index "ShapeGeomReferenceIndex" (23)
+ShapeGeometry:	11288:	checking LV refcounts
+ShapeGeometry:	11288:	rebuilding and comparing indexes
+ShapeGeometry:	11288:	integrity-check of table "ShapeGeometry" (22) finishes with error 0 (0x0) after 1 seconds
+ShapeInstances:	11288:	checking table "ShapeInstances" (24)
+ShapeInstances:	11288:	checking data
+ShapeInstances:	11288:	checking index "ProductTypeIndex" (27)
+ShapeInstances:	11288:	checking index "ProductIndex" (26)
+ShapeInstances:	11288:	checking index "GeometryShapeIndex" (25)
+ShapeInstances:	11288:	rebuilding and comparing indexes
+ShapeInstances:	11288:	integrity-check of table "ShapeInstances" (24) finishes with error 0 (0x0) after 2 seconds
+WARNING: Database file is too big (expected 12542 pages, file is 12798 pages)
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 19:36:44.569 Rand:4244564031 Computer:
+scanning the database from page 1 to page 12798
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 19:36:46.911 Rand:2780606418 Computer:
+
+Repair completed. Database corruption has been repaired!
+
+
+
+***** Eseutil completed in 10 seconds
+
+***** Repair of database 'Assets/ifc/teklateste1_test.xBIM' started [ESENT version 10.00.17134.0000, (ESENT[10.0.17134.0] RETAIL RTM MBCS)]
+
+search for 'ERROR:' to find errors
+search for 'WARNING:' to find warnings
+checking database header
+ERROR: database was not shutdown cleanly (Dirty Shutdown)
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes on disk.
+Creating 16 threads
+checking SystemRoot
+SystemRoot (OE)
+WARNING: node [2:20]: leaf node check failed
+SystemRoot (AE)
+checking system tables
+MSysObjects 
+MSysObjectsShadow 
+MSysObjects Name
+MSysObjects RootObjects
+rebuilding and comparing indexes
+checking logical consistency of system tables
+MSysObjects
+MSysObjectsShadow
+MSysObjids
+Geometry:	19576:	checking table "Geometry" (11)
+Geometry:	19576:	checking data
+Geometry:	19576:	checking index "GeomStyleIndex" (14)
+Geometry:	19576:	checking index "GeomTypeIndex" (13)
+Geometry:	19576:	checking index "GeomHashIndex" (12)
+Geometry:	19576:	rebuilding and comparing indexes
+Geometry:	19576:	integrity-check of table "Geometry" (11) finishes with error 0 (0x0) after 0 seconds
+IfcEntities:	19576:	checking table "IfcEntities" (8)
+IfcEntities:	19576:	checking long value tree (21)
+IfcEntities:	19576:	checking data
+IfcEntities:	19576:	checking LV refcounts
+IfcEntities:	19576:	integrity-check of table "IfcEntities" (8) finishes with error 0 (0x0) after 0 seconds
+IfcEntitiesIndex:	19576:	checking table "IfcEntitiesIndex" (9)
+IfcEntitiesIndex:	19576:	checking data
+IfcEntitiesIndex:	19576:	integrity-check of table "IfcEntitiesIndex" (9) finishes with error 0 (0x0) after 1 seconds
+MetaData:	19576:	checking table "MetaData" (10)
+MetaData:	19576:	checking data
+MetaData:	19576:	integrity-check of table "MetaData" (10) finishes with error 0 (0x0) after 0 seconds
+MSysLocales:	19576:	checking table "MSysLocales" (7)
+MSysLocales:	19576:	checking data
+MSysLocales:	19576:	integrity-check of table "MSysLocales" (7) finishes with error 0 (0x0) after 0 seconds
+MSysObjids:	19576:	checking table "MSysObjids" (6)
+MSysObjids:	19576:	checking data
+MSysObjids:	19576:	integrity-check of table "MSysObjids" (6) finishes with error 0 (0x0) after 0 seconds
+ShapeGeometry:	19576:	checking table "ShapeGeometry" (22)
+ShapeGeometry:	19576:	checking long value tree (28)
+ShapeGeometry:	19576:	checking data
+ShapeGeometry:	19576:	checking index "ShapeGeomReferenceIndex" (23)
+ShapeGeometry:	19576:	checking LV refcounts
+ShapeGeometry:	19576:	rebuilding and comparing indexes
+ShapeGeometry:	19576:	integrity-check of table "ShapeGeometry" (22) finishes with error 0 (0x0) after 0 seconds
+ShapeInstances:	19576:	checking table "ShapeInstances" (24)
+ShapeInstances:	19576:	checking data
+ShapeInstances:	19576:	checking index "ProductTypeIndex" (27)
+ShapeInstances:	19576:	checking index "ProductIndex" (26)
+ShapeInstances:	19576:	checking index "GeometryShapeIndex" (25)
+ShapeInstances:	19576:	rebuilding and comparing indexes
+ShapeInstances:	19576:	integrity-check of table "ShapeInstances" (24) finishes with error 0 (0x0) after 2 seconds
+WARNING: Database file is too big (expected 12542 pages, file is 12798 pages)
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 20:05:57.362 Rand:519947097 Computer:
+scanning the database from page 1 to page 12798
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 20:05:59.662 Rand:4083909781 Computer:
+
+Repair completed. Database corruption has been repaired!
+
+
+
+***** Eseutil completed in 9 seconds
+
+***** Repair of database 'Assets/ifc/teklateste1_test.xBIM' started [ESENT version 10.00.17134.0000, (ESENT[10.0.17134.0] RETAIL RTM MBCS)]
+
+search for 'ERROR:' to find errors
+search for 'WARNING:' to find warnings
+checking database header
+ERROR: database was not shutdown cleanly (Dirty Shutdown)
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes on disk.
+Creating 16 threads
+checking SystemRoot
+SystemRoot (OE)
+WARNING: node [2:36]: leaf node check failed
+SystemRoot (AE)
+checking system tables
+MSysObjects 
+MSysObjectsShadow 
+MSysObjects Name
+MSysObjects RootObjects
+rebuilding and comparing indexes
+checking logical consistency of system tables
+MSysObjects
+MSysObjectsShadow
+MSysObjids
+Geometry:	21200:	checking table "Geometry" (11)
+Geometry:	21200:	checking data
+Geometry:	21200:	checking index "GeomStyleIndex" (14)
+Geometry:	21200:	checking index "GeomTypeIndex" (13)
+Geometry:	21200:	checking index "GeomHashIndex" (12)
+Geometry:	21200:	rebuilding and comparing indexes
+Geometry:	21200:	integrity-check of table "Geometry" (11) finishes with error 0 (0x0) after 0 seconds
+IfcEntities:	21200:	checking table "IfcEntities" (8)
+IfcEntities:	21200:	checking long value tree (21)
+IfcEntities:	21200:	checking data
+IfcEntities:	21200:	checking LV refcounts
+IfcEntities:	21200:	integrity-check of table "IfcEntities" (8) finishes with error 0 (0x0) after 0 seconds
+IfcEntitiesIndex:	21200:	checking table "IfcEntitiesIndex" (9)
+IfcEntitiesIndex:	21200:	checking data
+IfcEntitiesIndex:	21200:	integrity-check of table "IfcEntitiesIndex" (9) finishes with error 0 (0x0) after 1 seconds
+MetaData:	21200:	checking table "MetaData" (10)
+MetaData:	21200:	checking data
+MetaData:	21200:	integrity-check of table "MetaData" (10) finishes with error 0 (0x0) after 0 seconds
+MSysLocales:	21200:	checking table "MSysLocales" (7)
+MSysLocales:	21200:	checking data
+MSysLocales:	21200:	integrity-check of table "MSysLocales" (7) finishes with error 0 (0x0) after 0 seconds
+MSysObjids:	21200:	checking table "MSysObjids" (6)
+MSysObjids:	21200:	checking data
+MSysObjids:	21200:	integrity-check of table "MSysObjids" (6) finishes with error 0 (0x0) after 0 seconds
+ShapeGeometry:	21200:	checking table "ShapeGeometry" (22)
+ShapeGeometry:	21200:	checking long value tree (28)
+ShapeGeometry:	21200:	checking data
+ShapeGeometry:	21200:	checking index "ShapeGeomReferenceIndex" (23)
+ShapeGeometry:	21200:	checking LV refcounts
+ShapeGeometry:	21200:	rebuilding and comparing indexes
+ShapeGeometry:	21200:	integrity-check of table "ShapeGeometry" (22) finishes with error 0 (0x0) after 0 seconds
+ShapeInstances:	21200:	checking table "ShapeInstances" (24)
+ShapeInstances:	21200:	checking data
+ShapeInstances:	21200:	checking index "ProductTypeIndex" (27)
+ShapeInstances:	21200:	checking index "ProductIndex" (26)
+ShapeInstances:	21200:	checking index "GeometryShapeIndex" (25)
+ShapeInstances:	21200:	rebuilding and comparing indexes
+ShapeInstances:	21200:	integrity-check of table "ShapeInstances" (24) finishes with error 0 (0x0) after 2 seconds
+WARNING: Database file is too big (expected 12542 pages, file is 12798 pages)
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 20:45:42.929 Rand:965727537 Computer:
+scanning the database from page 1 to page 12798
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 20:45:45.230 Rand:3813245026 Computer:
+
+Repair completed. Database corruption has been repaired!
+
+
+
+***** Eseutil completed in 9 seconds
+
+***** Repair of database 'Assets/ifc/teklateste1_test.xBIM' started [ESENT version 10.00.17134.0000, (ESENT[10.0.17134.0] RETAIL RTM MBCS)]
+
+search for 'ERROR:' to find errors
+search for 'WARNING:' to find warnings
+checking database header
+ERROR: database was not shutdown cleanly (Dirty Shutdown)
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes on disk.
+Creating 16 threads
+checking SystemRoot
+SystemRoot (OE)
+SystemRoot (AE)
+checking system tables
+MSysObjects 
+MSysObjectsShadow 
+MSysObjects Name
+MSysObjects RootObjects
+rebuilding and comparing indexes
+checking logical consistency of system tables
+MSysObjects
+MSysObjectsShadow
+MSysObjids
+Geometry:	23420:	checking table "Geometry" (11)
+Geometry:	23420:	checking data
+Geometry:	23420:	checking index "GeomStyleIndex" (14)
+Geometry:	23420:	checking index "GeomTypeIndex" (13)
+Geometry:	23420:	checking index "GeomHashIndex" (12)
+Geometry:	23420:	rebuilding and comparing indexes
+Geometry:	23420:	integrity-check of table "Geometry" (11) finishes with error 0 (0x0) after 0 seconds
+IfcEntities:	23420:	checking table "IfcEntities" (8)
+IfcEntities:	23420:	checking long value tree (21)
+IfcEntities:	23420:	checking data
+IfcEntities:	23420:	checking LV refcounts
+IfcEntities:	23420:	integrity-check of table "IfcEntities" (8) finishes with error 0 (0x0) after 0 seconds
+IfcEntitiesIndex:	23420:	checking table "IfcEntitiesIndex" (9)
+IfcEntitiesIndex:	23420:	checking data
+IfcEntitiesIndex:	23420:	integrity-check of table "IfcEntitiesIndex" (9) finishes with error 0 (0x0) after 1 seconds
+MetaData:	23420:	checking table "MetaData" (10)
+MetaData:	23420:	checking data
+MetaData:	23420:	integrity-check of table "MetaData" (10) finishes with error 0 (0x0) after 0 seconds
+MSysLocales:	23420:	checking table "MSysLocales" (7)
+MSysLocales:	23420:	checking data
+MSysLocales:	23420:	integrity-check of table "MSysLocales" (7) finishes with error 0 (0x0) after 0 seconds
+MSysObjids:	23420:	checking table "MSysObjids" (6)
+MSysObjids:	23420:	checking data
+MSysObjids:	23420:	integrity-check of table "MSysObjids" (6) finishes with error 0 (0x0) after 0 seconds
+ShapeGeometry:	23420:	checking table "ShapeGeometry" (22)
+ShapeGeometry:	23420:	checking long value tree (28)
+ShapeGeometry:	23420:	checking data
+ShapeGeometry:	23420:	checking index "ShapeGeomReferenceIndex" (23)
+ShapeGeometry:	23420:	checking LV refcounts
+ShapeGeometry:	23420:	rebuilding and comparing indexes
+ShapeGeometry:	23420:	integrity-check of table "ShapeGeometry" (22) finishes with error 0 (0x0) after 0 seconds
+ShapeInstances:	23420:	checking table "ShapeInstances" (24)
+ShapeInstances:	23420:	checking data
+ShapeInstances:	23420:	checking index "ProductTypeIndex" (27)
+ShapeInstances:	23420:	checking index "ProductIndex" (26)
+ShapeInstances:	23420:	checking index "GeometryShapeIndex" (25)
+ShapeInstances:	23420:	rebuilding and comparing indexes
+ShapeInstances:	23420:	integrity-check of table "ShapeInstances" (24) finishes with error 0 (0x0) after 1 seconds
+WARNING: Database file is too big (expected 12542 pages, file is 12798 pages)
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 21:09:32.982 Rand:3320306614 Computer:
+scanning the database from page 1 to page 12798
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 21:09:34.890 Rand:432452314 Computer:
+
+Repair completed. Database corruption has been repaired!
+
+
+
+***** Eseutil completed in 8 seconds
+
+***** Repair of database 'Assets/ifc/teklateste1_test.xBIM' started [ESENT version 10.00.17134.0000, (ESENT[10.0.17134.0] RETAIL RTM MBCS)]
+
+search for 'ERROR:' to find errors
+search for 'WARNING:' to find warnings
+checking database header
+ERROR: database was not shutdown cleanly (Dirty Shutdown)
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes on disk.
+Creating 16 threads
+checking SystemRoot
+SystemRoot (OE)
+SystemRoot (AE)
+checking system tables
+MSysObjects 
+MSysObjectsShadow 
+MSysObjects Name
+MSysObjects RootObjects
+rebuilding and comparing indexes
+checking logical consistency of system tables
+MSysObjects
+MSysObjectsShadow
+MSysObjids
+Geometry:	15240:	checking table "Geometry" (11)
+Geometry:	15240:	checking data
+Geometry:	15240:	checking index "GeomStyleIndex" (14)
+Geometry:	15240:	checking index "GeomTypeIndex" (13)
+Geometry:	15240:	checking index "GeomHashIndex" (12)
+Geometry:	15240:	rebuilding and comparing indexes
+Geometry:	15240:	integrity-check of table "Geometry" (11) finishes with error 0 (0x0) after 0 seconds
+IfcEntities:	15240:	checking table "IfcEntities" (8)
+IfcEntities:	15240:	checking long value tree (21)
+IfcEntities:	15240:	checking data
+IfcEntities:	15240:	checking LV refcounts
+IfcEntities:	15240:	integrity-check of table "IfcEntities" (8) finishes with error 0 (0x0) after 0 seconds
+IfcEntitiesIndex:	15240:	checking table "IfcEntitiesIndex" (9)
+IfcEntitiesIndex:	15240:	checking data
+IfcEntitiesIndex:	15240:	integrity-check of table "IfcEntitiesIndex" (9) finishes with error 0 (0x0) after 1 seconds
+MetaData:	15240:	checking table "MetaData" (10)
+MetaData:	15240:	checking data
+MetaData:	15240:	integrity-check of table "MetaData" (10) finishes with error 0 (0x0) after 0 seconds
+MSysLocales:	15240:	checking table "MSysLocales" (7)
+MSysLocales:	15240:	checking data
+MSysLocales:	15240:	integrity-check of table "MSysLocales" (7) finishes with error 0 (0x0) after 0 seconds
+MSysObjids:	15240:	checking table "MSysObjids" (6)
+MSysObjids:	15240:	checking data
+MSysObjids:	15240:	integrity-check of table "MSysObjids" (6) finishes with error 0 (0x0) after 0 seconds
+ShapeGeometry:	15240:	checking table "ShapeGeometry" (22)
+ShapeGeometry:	15240:	checking long value tree (28)
+ShapeGeometry:	15240:	checking data
+ShapeGeometry:	15240:	checking index "ShapeGeomReferenceIndex" (23)
+ShapeGeometry:	15240:	checking LV refcounts
+ShapeGeometry:	15240:	rebuilding and comparing indexes
+ShapeGeometry:	15240:	integrity-check of table "ShapeGeometry" (22) finishes with error 0 (0x0) after 0 seconds
+ShapeInstances:	15240:	checking table "ShapeInstances" (24)
+ShapeInstances:	15240:	checking data
+ShapeInstances:	15240:	checking index "ProductTypeIndex" (27)
+ShapeInstances:	15240:	checking index "ProductIndex" (26)
+ShapeInstances:	15240:	checking index "GeometryShapeIndex" (25)
+ShapeInstances:	15240:	rebuilding and comparing indexes
+ShapeInstances:	15240:	integrity-check of table "ShapeInstances" (24) finishes with error 0 (0x0) after 1 seconds
+WARNING: Database file is too big (expected 12542 pages, file is 12798 pages)
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 21:24:03.393 Rand:3570026911 Computer:
+scanning the database from page 1 to page 12798
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/03/2018 21:24:04.127 Rand:1213059015 Computer:
+
+Repair completed. Database corruption has been repaired!
+
+
+
+***** Eseutil completed in 6 seconds
+
+***** Repair of database 'Assets/ifc/teklateste1_test.xBIM' started [ESENT version 10.00.17134.0000, (ESENT[10.0.17134.0] RETAIL RTM MBCS)]
+
+search for 'ERROR:' to find errors
+search for 'WARNING:' to find warnings
+checking database header
+ERROR: database was not shutdown cleanly (Dirty Shutdown)
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes
+database file "Assets/ifc/teklateste1_test.xBIM" is 52428800 bytes on disk.
+Creating 16 threads
+checking SystemRoot
+SystemRoot (OE)
+SystemRoot (AE)
+checking system tables
+MSysObjects 
+MSysObjectsShadow 
+MSysObjects Name
+MSysObjects RootObjects
+rebuilding and comparing indexes
+checking logical consistency of system tables
+MSysObjects
+MSysObjectsShadow
+MSysObjids
+Geometry:	9336:	checking table "Geometry" (11)
+Geometry:	9336:	checking data
+Geometry:	9336:	checking index "GeomStyleIndex" (14)
+Geometry:	9336:	checking index "GeomTypeIndex" (13)
+Geometry:	9336:	checking index "GeomHashIndex" (12)
+Geometry:	9336:	rebuilding and comparing indexes
+Geometry:	9336:	integrity-check of table "Geometry" (11) finishes with error 0 (0x0) after 0 seconds
+IfcEntities:	9336:	checking table "IfcEntities" (8)
+IfcEntities:	9336:	checking long value tree (21)
+IfcEntities:	9336:	checking data
+IfcEntities:	9336:	checking LV refcounts
+IfcEntities:	9336:	integrity-check of table "IfcEntities" (8) finishes with error 0 (0x0) after 0 seconds
+IfcEntitiesIndex:	9336:	checking table "IfcEntitiesIndex" (9)
+IfcEntitiesIndex:	9336:	checking data
+IfcEntitiesIndex:	9336:	integrity-check of table "IfcEntitiesIndex" (9) finishes with error 0 (0x0) after 1 seconds
+MetaData:	9336:	checking table "MetaData" (10)
+MetaData:	9336:	checking data
+MetaData:	9336:	integrity-check of table "MetaData" (10) finishes with error 0 (0x0) after 0 seconds
+MSysLocales:	9336:	checking table "MSysLocales" (7)
+MSysLocales:	9336:	checking data
+MSysLocales:	9336:	integrity-check of table "MSysLocales" (7) finishes with error 0 (0x0) after 0 seconds
+MSysObjids:	9336:	checking table "MSysObjids" (6)
+MSysObjids:	9336:	checking data
+MSysObjids:	9336:	integrity-check of table "MSysObjids" (6) finishes with error 0 (0x0) after 0 seconds
+ShapeGeometry:	9336:	checking table "ShapeGeometry" (22)
+ShapeGeometry:	9336:	checking long value tree (28)
+ShapeGeometry:	9336:	checking data
+ShapeGeometry:	9336:	checking index "ShapeGeomReferenceIndex" (23)
+ShapeGeometry:	9336:	checking LV refcounts
+ShapeGeometry:	9336:	rebuilding and comparing indexes
+ShapeGeometry:	9336:	integrity-check of table "ShapeGeometry" (22) finishes with error 0 (0x0) after 1 seconds
+ShapeInstances:	9336:	checking table "ShapeInstances" (24)
+ShapeInstances:	9336:	checking data
+ShapeInstances:	9336:	checking index "ProductTypeIndex" (27)
+ShapeInstances:	9336:	checking index "ProductIndex" (26)
+ShapeInstances:	9336:	checking index "GeometryShapeIndex" (25)
+ShapeInstances:	9336:	rebuilding and comparing indexes
+ShapeInstances:	9336:	integrity-check of table "ShapeInstances" (24) finishes with error 0 (0x0) after 1 seconds
+WARNING: Database file is too big (expected 12542 pages, file is 12798 pages)
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/05/2018 06:28:38.672 Rand:4039100041 Computer:
+scanning the database from page 1 to page 12798
+changing signature of Assets/ifc/teklateste1_test.xBIM
+new DB signature is:
+Create time:Create time:08/05/2018 06:28:40.655 Rand:3811026856 Computer:
+
+Repair completed. Database corruption has been repaired!
+
+
+
+***** Eseutil completed in 9 seconds
+
