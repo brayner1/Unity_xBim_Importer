@@ -10,6 +10,9 @@ using Xbim.Common.Metadata;
 using Xbim.Common.Step21;
 using Xbim.Common.XbimExtensions;
 using Xbim.Ifc4.Interfaces;
+using Xbim.Ifc4.Kernel;
+using Xbim.Ifc4.UtilityResource;
+using Xbim.Ifc4.PropertyResource;
 using Xbim.Ifc4.MeasureResource;
 using Xbim.IO;
 using Xbim.IO.Esent;
@@ -18,6 +21,7 @@ using Xbim.IO.Step21;
 using Xbim.IO.Xml;
 using Xbim.IO.Xml.BsConf;
 using Xbim.Ifc;
+using Xbim.Ifc.Extensions;
 using Xbim.XbimExtensions;
 using Xbim.Geometry;
 using Xbim.ModelGeometry;
@@ -151,28 +155,48 @@ public class LoadModel : MonoBehaviour {
                         MeshContainer obj = Instantiate(container, new Vector3((float)transformation.OffsetX * 0.1f, (float)transformation.OffsetY * 0.1f, (float)transformation.OffsetZ * 0.1f), transf.rotation);
                         obj.transform.RotateAround(new Vector3(0, 0, 0), new Vector3(1, 0, 0), -90);
                         obj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                        var products = model.Instances.Where<IIfcProduct>(e => e.EntityLabel == shape.IfcProductLabel);
+                        var products = model.Instances.Where<IfcProduct>(e => e.EntityLabel == shape.IfcProductLabel);
                         int productCount = 0;
                         foreach(var product in products)
                         {
                             obj.name = product.Name.ToString();
                             //Material mat = obj.GetComponent<MeshRenderer>().material;
-                            if(product.Activated)
+                            var isDefinedBy_inv = product.IsDefinedBy;
+                            foreach(var rel_def in isDefinedBy_inv)
                             {
-                                var isDefinedBy_inv = product.IsDefinedBy;
-                                foreach(var rel_def in isDefinedBy_inv)
+                                IfcPropertySetDefinitionSelect relating_property_def_select = rel_def.RelatingPropertyDefinition;
+                                IfcPropertySetDefinition relating_property_def = (IfcPropertySetDefinition)relating_property_def_select;
+                                if (relating_property_def != null)
                                 {
-                                    IIfcPropertySetDefinitionSelect relating_property_def_select = rel_def.RelatingPropertyDefinition;
-                                    IIfcPropertySetDefinition relating_property_def = (IIfcPropertySetDefinition)relating_property_def_select;
-                                    if (relating_property_def != null)
+                                    IfcPropertySet prop_set = (IfcPropertySet)relating_property_def;
+                                    if (prop_set != null)
                                     {
-                                        IIfcPropertySet prop_set = (IIfcPropertySet)relating_property_def;
-                                        if (prop_set!= null)
+                                        Material mat = readAppearanceFromPropertySet(prop_set);
+                                        obj.GetComponent<Material>().color = mat.color;
+                                            
+                                    }
+                                    continue;
+                                }
+
+                                IfcPropertySetDefinitionSet relating_property_def_set = (IfcPropertySetDefinitionSet)relating_property_def_select;
+                                if(relating_property_def_set != null)
+                                {
+                                    var vec_property_def = relating_property_def_set.PropertySetDefinitions;
+                                    foreach(IfcPropertySetDefinition property_def in vec_property_def)
+                                    {
+                                        if(property_def != null)
                                         {
-                                            readAppearanceFromPropertySet(prop_set);
+                                            IfcPropertySet prop_set = (IfcPropertySet)property_def;
+                                            if (prop_set != null)
+                                            {
+                                                Material mat = readAppearanceFromPropertySet(prop_set);
+                                                obj.GetComponent<Material>().color = mat.color;
+                                            }
                                         }
                                     }
+                                        
                                 }
+
                             }
                             productCount++;
                         }
@@ -189,10 +213,65 @@ public class LoadModel : MonoBehaviour {
         } // Close File
     }
 
-    Material readAppearanceFromPropertySet(IIfcPropertySet prop_set)
+    Material readAppearanceFromPropertySet(IfcPropertySet prop_set)
     {
         Material mat = new Material(sampleMat);
+        foreach(IfcProperty prop in prop_set.HasProperties)
+        {
+            if (prop == null) continue;
+            IfcComplexProperty complex_prop = (IfcComplexProperty)prop;
+            //IfcComplexProperty complex_prop = (IfcComplexProperty)prop;
+            if(complex_prop != null)
+            {
+                if (complex_prop.UsageName == null) continue;
+                if (complex_prop.UsageName.Value.ToString().Equals("Color"))
+                {
+                    Color diff_color = readIfcComplexPropertyColor(complex_prop);
+                    mat.color = diff_color;
+                }
+            }
+        }
         return mat;
+    }
+
+    Color readIfcComplexPropertyColor(IfcComplexProperty complex_prop)
+    {
+        Color cor = new Color(1, 1, 1, 1);
+        var vec_hasProperties = complex_prop.HasProperties;
+        if (vec_hasProperties.Count < 3) return cor;
+        IfcPropertySingleValue[] values = new IfcPropertySingleValue[3];
+        values[0] = (IfcPropertySingleValue)complex_prop.HasProperties[0];
+        values[1] = (IfcPropertySingleValue)complex_prop.HasProperties[1];
+        values[2] = (IfcPropertySingleValue)complex_prop.HasProperties[2];
+        if (values[0] != null && values[1] != null && values[2] != null)
+        {
+            IfcValue v1 = values[0].NominalValue;
+            IfcValue v2 = values[1].NominalValue;
+            IfcValue v3 = values[2].NominalValue;
+            if (v1 != null && v2 != null && v3 != null)
+            {
+                IfcInteger v1_int = (IfcInteger)v1;
+                IfcInteger v2_int = (IfcInteger)v2;
+                IfcInteger v3_int = (IfcInteger)v3;
+                if (v1_int != null && v2_int != null && v3_int != null)
+                {
+                    float r = (float)v1_int / 255.0f;
+                    float g = (float)v2_int / 255.0f;
+                    float b = (float)v3_int / 255.0f;
+                    if (r < 0.05f && g < 0.05f && b < 0.05f)
+                    {
+                        r = 0.1f;
+                        g = 0.12f;
+                        b = 0.15f;
+                    }
+                    cor.r = r;
+                    cor.g = g;
+                    cor.b = b;
+                }
+
+            }
+        }
+        return cor;
     }
 
     private Vector3[] Point3DList_to_Vec3Array(IList<XbimPoint3D> vertices)
