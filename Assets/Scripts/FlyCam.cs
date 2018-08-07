@@ -9,14 +9,14 @@ public class FlyCam : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    float flySpeed = 10;
+    float flySpeed = 5;
     bool isEnabled;
  
     bool shift;
     bool ctrl;
     float accelerationAmount = 30;
-    float accelerationRatio = 3;
-    float slowDownRatio = 0.2f;
+    float accelerationRatio = 0.5f;
+    float slowDownRatio = 0.5f;
 
     float lastX = -99999;
     float lastY = -99999;
@@ -24,29 +24,15 @@ public class FlyCam : MonoBehaviour {
     void Update()
     {
         //use shift to speed up flight
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-        {
-            shift = true;
-            flySpeed *= (int)accelerationRatio;
-        }
-
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
         {
-            shift = false;
-            flySpeed /= (int)accelerationRatio;
+            flySpeed = (flySpeed < 15.0f)? flySpeed + accelerationRatio : flySpeed;
         }
 
         //use ctrl to slow up flight
-        if (Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt))
-        {
-            ctrl = true;
-            flySpeed *= (float)slowDownRatio;
-        }
-
         if (Input.GetKeyUp(KeyCode.LeftAlt) || Input.GetKeyUp(KeyCode.RightAlt))
         {
-            ctrl = false;
-            flySpeed /= (float)slowDownRatio;
+            flySpeed = (flySpeed > 0.5f)? flySpeed - slowDownRatio : flySpeed;
         }
 
         if (Input.GetMouseButtonDown(1))

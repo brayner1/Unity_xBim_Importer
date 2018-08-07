@@ -27,6 +27,7 @@ using Xbim.ModelGeometry.Scene;
 public class LoadModel : MonoBehaviour {
 
     public MeshContainer container;
+    public Material sampleMat;
     private Dictionary<int, Mesh> geometryInstancesMap; 
 	// Use this for initialization
 	void Start () {
@@ -45,7 +46,7 @@ public class LoadModel : MonoBehaviour {
 
     private void Load()
     {
-        const string fileName = "Assets/ifc/sobrado-populated.xBIM";
+        const string fileName = "Assets/ifc/Project1.xBIM";
         Debug.Log("initializing model loading");
         using (var model = IfcStore.Open(fileName, accessMode: Xbim.IO.Esent.XbimDBAccess.ReadWrite))
         {
@@ -158,30 +159,19 @@ public class LoadModel : MonoBehaviour {
                             //Material mat = obj.GetComponent<MeshRenderer>().material;
                             if(product.Activated)
                             {
-                                var material = product.Material;
-                                if (material != null)
+                                var isDefinedBy_inv = product.IsDefinedBy;
+                                foreach(var rel_def in isDefinedBy_inv)
                                 {
-                                    var ifcMats = product.Material.Model.Instances.Where<IIfcMaterial>(e => e.EntityLabel.Equals(product.Material.EntityLabel));
-                                    int ifcMatsCount = 0;
-                                    foreach (var ifcMat in ifcMats)
+                                    IIfcPropertySetDefinitionSelect relating_property_def_select = rel_def.RelatingPropertyDefinition;
+                                    IIfcPropertySetDefinition relating_property_def = (IIfcPropertySetDefinition)relating_property_def_select;
+                                    if (relating_property_def != null)
                                     {
-                                        var matProps = ifcMat.HasProperties;
-                                        int propsCount = 0;
-                                        Debug.Log("Materials Properties:");
-                                        foreach(var propertie in matProps)
+                                        IIfcPropertySet prop_set = (IIfcPropertySet)relating_property_def;
+                                        if (prop_set!= null)
                                         {
-                                            var props = propertie.Properties;
-                                            //foreach(var ifcProp in props)
-                                            //{
-                                            //    ifcProp.
-                                            //}
-                                            Debug.Log(propertie.Name);
-                                            propsCount++;
+                                            readAppearanceFromPropertySet(prop_set);
                                         }
-                                        ifcMatsCount++;
                                     }
-                                    if (ifcMatsCount > 0)
-                                        Debug.Log(ifcMatsCount + " Materials of product " + product.EntityLabel + " with entity label " + product.Material.EntityLabel + " found");
                                 }
                             }
                             productCount++;
@@ -192,43 +182,17 @@ public class LoadModel : MonoBehaviour {
                         //yield return null;
                     }
                     container.setMesh(null);
-                    /*
-                    long shapeGeometriesCount = 0;
-                    long triangulatedMeshs = 0;
-                    long triangulatedMeshHashs = 0;
-                    long triangulatedPolys = 0;
-                    long polyhedrons = 0;
-                    long undefineds = 0;
-                    long binaryPolyhedrons = 0;
-                    foreach (Xbim.Common.Geometry.XbimShapeGeometry geometry in shapeGeometries)
-                    {
-                        shapeGeometriesCount++;
-                        if (geometry.Format == Xbim.Common.Geometry.XbimGeometryType.TriangulatedMesh)
-                            triangulatedMeshs++;
-                        else if (geometry.Format == Xbim.Common.Geometry.XbimGeometryType.TriangulatedPolyhedron)
-                            triangulatedPolys++;
-                        else if (geometry.Format == Xbim.Common.Geometry.XbimGeometryType.TriangulatedMeshHash)
-                            triangulatedMeshHashs++;
-                        else if (geometry.Format == Xbim.Common.Geometry.XbimGeometryType.Polyhedron)
-                            polyhedrons++;
-                        else if (geometry.Format == Xbim.Common.Geometry.XbimGeometryType.PolyhedronBinary)
-                            binaryPolyhedrons++;
-                        else if (geometry.Format == Xbim.Common.Geometry.XbimGeometryType.Undefined)
-                            undefineds++;
-                    }
-                    
-                    Debug.Log("There is " + shapeGeometriesCount + " shape Geometries");
-                    Debug.Log("There is " + polyhedrons + " Polyhedrons");
-                    Debug.Log("There is " + binaryPolyhedrons + " Binary Polyhedrons");
-                    Debug.Log("There is " + triangulatedPolys + " triangulated Polyhedrons");
-                    Debug.Log("There is " + triangulatedMeshs + " triangulated Meshs");
-                    Debug.Log("There is " + triangulatedMeshHashs + " triangulated Meshs Hashs");
-                    Debug.Log("There is " + undefineds + " undefined shapes");  */
                 }
                 Debug.Log("Geometry loaded. Starting visualization.");
             } // Close Geometry Store
 
         } // Close File
+    }
+
+    Material readAppearanceFromPropertySet(IIfcPropertySet prop_set)
+    {
+        Material mat = new Material(sampleMat);
+        return mat;
     }
 
     private Vector3[] Point3DList_to_Vec3Array(IList<XbimPoint3D> vertices)
